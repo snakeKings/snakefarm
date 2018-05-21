@@ -75,8 +75,8 @@ function refreshData(){
     });
     updateBuyPrice()
     updateSellPrice()
-	updateSnailmasterPrice()
-	updateCurrentSnailmaster()
+	updateSnakemasterPrice()
+	updateCurrentSnakemaster()
     var prldoc=document.getElementById('playerreflink')
     prldoc.textContent=window.location+"?ref="+web3.eth.accounts[0]
     var copyText = document.getElementById("copytextthing");
@@ -136,22 +136,22 @@ function updateBuyPrice(){
     });
 }
 
-function updateSnailmasterPrice(){
-    var snailmasterpricedoc=document.getElementById('snailmasterprice')
-	getSnailmasterReq(function(req) {
-		snailmasterpricedoc.textContent = translateQuantity(req, 0);
+function updateSnakemasterPrice(){
+    var snakemasterpricedoc=document.getElementById('snakemasterprice')
+	getSnakemasterReq(function(req) {
+		snakemasterpricedoc.textContent = translateQuantity(req, 0);
 	});
 }
 
 
-function updateCurrentSnailmaster(){
-    var currentsnailmasterdoc=document.getElementById('currentsnailmaster')
+function updateCurrentSnakemaster(){
+    var currentsnakemasterdoc=document.getElementById('currentsnakemaster')
     //eggstobuydoc.textContent='?'
-	currentsnailmaster.textContent=ceoAddress()
+	currentsnakemaster.textContent=ceoAddress()
 }
 
 function getFreeSnake2(){
-    var ethtospenddoc=0.001//document.getElementById('freesnailspend')
+    var ethtospenddoc=0.001//document.getElementById('freesnakespend')
     weitospend=web3.toWei(ethtospenddoc,'ether')
     getFreeSnake(weitospend,function(){
         displayTransactionMessage();
